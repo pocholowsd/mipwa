@@ -1,0 +1,24 @@
+<html lang="es">
+  <head>
+    <title>Mi PWA</title>
+  </head>
+  <link rel="manifest" href="manifest.json">
+  <body>
+      <div align='center'>
+        <h1>Mi PWA</h1>
+        <a href="https://google.com" class="btn btn-primary">IR A GOOLGE </a>
+      </div>
+  <body>
+  <!-- SERVICE WORKER  -->
+  <script type="text/javascript">
+      if ("serviceWorker" in navigator) {
+          window.addEventListener("load", function() {
+              navigator.serviceWorker
+              .register("sw.js")
+              .then(res => console.log("service worker registrado"))
+              .catch(err => console.log("service worker no registrado", err));
+          });
+          }
+  </script>
+  <!-- SERVICE WORKER  -->
+</html>

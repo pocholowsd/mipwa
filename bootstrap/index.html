@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Mi primer BOOTSTRAP</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h2>MI FORMULARIO</h2>
+    <form action="/action_page.php">
+
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="texto" class="form-control" id="nombre" placeholder="aqui tu nombre" name="nombre">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="aqui tu email" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="aqui tu password" name="password">
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">Telefono:</label>
+        <input type="text" class="form-control" id="telefono" placeholder="aqui tu telefono" name="telefono">
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">Direccion:</label>
+        <input type="text" class="form-control" id="direccion" placeholder="aqui tu direccion" name="direccion">
+      </div>
+
+      <div class="form-group">
+        <label for="fecnac">Fecha Nacimiento:</label>
+        <input type="date" class="form-control" id="fecnac" placeholder="aqui tu direccion" name="fecnac">
+      </div>
+
+      <div class="form-group">
+        <label for="foto">Foto:</label>
+        <input type="file" class="form-control" id="foto" placeholder="aqui tu direccion" capture="enviroment" name="foto" accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <label for="sexo">Sexo:</label>
+        <select class="form-control" id="sexo" name="sexo">
+          <option value="hombre">Hombre</option>
+          <option value="mujer">Mujer</option>
+        </select>
+      </div>
+
+      <button id="boton-enviar" type="button" class="btn btn-default">Submit</button>
+      <button id="boton-verpassword" type="button" class="btn btn-default">ver password</button>
+      <button id="boton-vergps" type="button" class="btn btn-default">ver GPS</button>
+    </form>
+  </div>
+ <script>
+     $("#boton-verpassword").on("mousedown",function(){
+       $("#password").prop('type','text');
+     });
+     $("#boton-verpassword").on("mouseup",function(){
+       $("#password").prop('type','password');
+     });
+
+     $("#boton-vergps").on("click",function(){
+       if("geolocation" in navigator){
+         navigator.geolocation.getCurrentPosition(function(pos){
+            var lat = pos.coords.latitude;
+            var lon = pos.coords.longitude;
+            alert("mis cordenadas son:"+lat+","+lon);
+         });
+
+       }else{
+         alert("gps no disponible");
+       }
+     });
+
+ </script>
+</body>
+</html>

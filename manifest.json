@@ -1,0 +1,16 @@
+{
+  "short_name": "MI PWA",
+  "name": "Mi progresive web app",
+  "icons": [
+  {
+  "src":"icons/icono512.png",
+  "sizes": "512x512",
+  "type": "image/png"
+  }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "display": "standalone",
+  "description": "Esta es mi primer prueba de una PWA"
+}
